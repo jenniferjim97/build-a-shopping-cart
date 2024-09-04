@@ -1,5 +1,6 @@
 /* Create an array named products which you will use to add all of your product object literals that you create in the next step. */
 
+let products = []
 /* Create 3 or more product objects using object literal notation 
    Each product should include five properties
    - name: name of product (string)
@@ -14,9 +15,29 @@
    - orange.jpg by Mae Mu
    - strawberry.jpg by Allec Gomes
 */
+let cherry = {name: 'cherry',
+  price: 1.99,
+  quantity: 0,
+  productId: 1,
+  image: "./images/cherry.jpg"};
+  
+  let orange = {name:'orange',
+  price:1.00,
+  quantity: 0,
+  productId: 2,
+  image: "./images/orange.jpg"};
+  
+  let strawberry =  {name: 'strawberry',
+    price: 1.99,
+    quantity: 0,
+    productId: 1,
+    image: "./images/strawberry.jpg"};
 
+    products.push(cherry);
+    products.push(orange);
+    products.push(strawberry);    
 /* Declare an empty array named cart to hold the items in the cart */
-
+let cart = []
 /* Create a function named addProductToCart that takes in the product productId as an argument
   - addProductToCart should get the correct product based on the productId
   - addProductToCart should then increase the product's quantity
