@@ -1,5 +1,4 @@
 /* Create an array named products which you will use to add all of your product object literals that you create in the next step. */
-
 let products = []
 /* Create 3 or more product objects using object literal notation 
    Each product should include five properties
@@ -106,9 +105,9 @@ function cartTotal(){
   return cart.reduce((total, product) => total + product.price * product.quantity, 0);
 }
 /* Create a function called emptyCart that empties the products from the cart */
-function emptyCart(productId){
-  const cartItem = cart.find(item => item.productId === productId);
-  cartItem.quantity = 0;
+function emptyCart() {
+  cart.length = 0;
+  products.forEach(product => product.quantity = 0);
 }
 /* Create a function named pay that takes in an amount as an argument
   - amount is the money paid by customer
@@ -116,10 +115,16 @@ function emptyCart(productId){
   - pay will return a positive number if money should be returned to customer
   Hint: cartTotal function gives us cost of all the products in the cart  
 */
-function pay(amount){
-  const total = cartTotal();
-  const balance = amount - total;
-  return balance;
+let totalPaid = 0;
+
+function pay(amount) {
+  totalPaid += amount;
+  let remaining = totalPaid - cartTotal();
+  if (remaining >= 0) {
+      totalPaid = 0;
+      emptyCart()
+  }
+  return remaining;
 }
 /* Place stand out suggestions here (stand out suggestions can be found at the bottom of the project rubric.)*/
 
