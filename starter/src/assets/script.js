@@ -15,25 +15,31 @@ let products = []
    - orange.jpg by Mae Mu
    - strawberry.jpg by Allec Gomes
 */
-let cherry = {name: 'cherry',
+let cherry = {
+  name: 'cherry',
   price: 1.99,
   quantity: 0,
   productId: 1,
-  image: "./images/cherry.jpg"};
-  
-  let orange = {name:'orange',
-  price:1.00,
+  image: "./images/cherry.jpg"
+};
+
+let orange = {
+  name: 'orange',
+  price: 1.00,
   quantity: 0,
   productId: 2,
-  image: "./images/orange.jpg"};
-  
-  let strawberry =  {name: 'strawberry',
-    price: 1.99,
-    quantity: 0,
-    productId: 3,
-    image: "./images/strawberry.jpg"};
+  image: "./images/orange.jpg"
+};
 
-    products.push(cherry,orange,strawberry);
+let strawberry = {
+  name: 'strawberry',
+  price: 1.99,
+  quantity: 0,
+  productId: 3,
+  image: "./images/strawberry.jpg"
+};
+
+products.push(cherry, orange, strawberry);
     // products.push(orange);
     // products.push(strawberry);    
 /* Declare an empty array named cart to hold the items in the cart */
