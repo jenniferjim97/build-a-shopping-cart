@@ -10,11 +10,6 @@ let products = []
    - image: picture of product (url string)
 */
 
-/* Images provided in /images folder. All images from Unsplash.com
-   - cherry.jpg by Mae Mu
-   - orange.jpg by Mae Mu
-   - strawberry.jpg by Allec Gomes
-*/
 let cherry = {
   name: 'cherry',
   price: 1.99,
@@ -50,20 +45,17 @@ let cart = []
   - addProductToCart should then increase the product's quantity
   - if the product is not already in the cart, add it to the cart
 */
-function addProductToCart(productId){
- const product = products.find(item => item.productId === productId);
+function addProductToCart(productId) {
+  const product = products.find(item => item.productId === productId);
   if (product) {
-    const cartItem = cart.find(item => item.productId === productId);
-    if (cartItem) {
-      cartItem.quantity += 1;
-    } else {
-      cart.push({...product, quantity: 1}); 
-    }
-    }
-    else {
-      console.log("Product not found");
-    }
-    console.log(cart);
+      const cartItem = cart.find(item => item.productId === productId);
+      if (cartItem) {
+          cartItem.quantity += 1;
+      } else {
+          cart.push({...product,quantity: 1});
+      }
+  }
+
 }
   
 /* Create a function named increaseQuantity that takes in the productId as an argument
@@ -114,8 +106,9 @@ function cartTotal(){
   return cart.reduce((total, product) => total + product.price * product.quantity, 0);
 }
 /* Create a function called emptyCart that empties the products from the cart */
-function emptyCart(){
-cart = [];
+function emptyCart(productId){
+  const cartItem = cart.find(item => item.productId === productId);
+  cartItem.quantity = 0;
 }
 /* Create a function named pay that takes in an amount as an argument
   - amount is the money paid by customer
