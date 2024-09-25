@@ -1,5 +1,6 @@
 /* Create an array named products which you will use to add all of your product object literals that you create in the next step. */
-let products = []
+let products = [];
+
 /* Create 3 or more product objects using object literal notation 
    Each product should include five properties
    - name: name of product (string)
@@ -34,10 +35,9 @@ let strawberry = {
 };
 
 products.push(cherry, orange, strawberry);
-    // products.push(orange);
-    // products.push(strawberry);    
+  
 /* Declare an empty array named cart to hold the items in the cart */
-let cart = []
+let cart = [];
 
 /* Create a function named addProductToCart that takes in the product productId as an argument
   - addProductToCart should get the correct product based on the productId
@@ -54,8 +54,7 @@ function addProductToCart(productId) {
           cart.push({...product,quantity: 1});
       }
   }
-
-}
+};
   
 /* Create a function named increaseQuantity that takes in the productId as an argument
   - increaseQuantity should get the correct product based on the productId
@@ -65,10 +64,8 @@ function increaseQuantity(productId){
   const cartItem = cart.find(item => item.productId === productId)
   if (cartItem) {
     cartItem.quantity += 1;
-  } else {
-    console.log("Product not found");
   }
-}
+};
 
 /* Create a function named decreaseQuantity that takes in the productId as an argument
   - decreaseQuantity should get the correct product based on the productId
@@ -87,7 +84,7 @@ function decreaseQuantity(productId){
       cart.splice(cart.indexOf(product), 1);
     }
   }
-}
+};
 /* Create a function named removeProductFromCart that takes in the productId as an argument
   - removeProductFromCart should get the correct product based on the productId
   - removeProductFromCart should update the product quantity to 0
@@ -95,7 +92,7 @@ function decreaseQuantity(productId){
 */
 function removeProductFromCart(productId){
   cart = cart.filter(products => products.productId !== productId);
-}
+};
 /* Create a function named cartTotal that has no parameters
   - cartTotal should iterate through the cart to get the total cost of all products
   - cartTotal should return the total cost of the products in the cart
@@ -103,12 +100,12 @@ function removeProductFromCart(productId){
 */
 function cartTotal(){
   return cart.reduce((total, product) => total + product.price * product.quantity, 0);
-}
+};
 /* Create a function called emptyCart that empties the products from the cart */
 function emptyCart() {
-  cart.length = 0;
-  products.forEach(product => product.quantity = 0);
-}
+  cart.length = 0; //empty cart//
+  products.forEach(product => product.quantity = 0); //resets the quantity to 0//
+};
 /* Create a function named pay that takes in an amount as an argument
   - amount is the money paid by customer
   - pay will return a negative number if there is a remaining balance
@@ -125,7 +122,7 @@ function pay(amount) {
       emptyCart()
   }
   return remaining;
-}
+};
 /* Place stand out suggestions here (stand out suggestions can be found at the bottom of the project rubric.)*/
 
 
@@ -147,4 +144,4 @@ module.exports = {
    emptyCart,
    /* Uncomment the following line if completing the currency converter bonus */
    // currency
-}
+};
